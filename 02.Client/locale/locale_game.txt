@@ -1,0 +1,1 @@
+MULTIPLY_STATE_POINT_ADD_TEXT    Add {} status point
