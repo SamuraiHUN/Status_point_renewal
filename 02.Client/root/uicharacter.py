@@ -32,7 +32,7 @@ change to:
 		self.toolTip.ClearToolTip()
 		self.toolTip.AppendTextLine(statDesc)
 		self.toolTip.AppendSpace(5)
-		self.toolTip.AppendTextLine("|Ikey/key_ctrl|i + |key/key_lclick|i - " +\
+		self.toolTip.AppendTextLine("|Ikey/key_ctrl|i + |Ikey/key_lclick|i - " +\
 								localeInfo.MULTIPLY_STATE_POINT_ADD_TEXT.format(constInfo.INCREASE_POINTS_CTRL),\
 								constInfo.TOOLTIP_KEYS_COLOR_HEX)
 		self.toolTip.Show()
