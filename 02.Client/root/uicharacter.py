@@ -11,11 +11,18 @@ change to:
 
 	def __OnClickStatusPlusButton(self, statusKey):
 		try:
-			status_inc = constInfo.INCREASE_POINTS_CTRL\
-						if app.IsPressed(app.DIK_LCONTROL) or app.IsPressed(app.DIK_RCONTROL) else 1
+			if app.STATUS_UP_RENEWAL:
+				if app.IsPressed(app.DIK_LCONTROL) or app.IsPressed(app.DIK_RCONTROL):
+					status_inc = constInfo.INCREASE_POINTS_CTRL
+				else:
+					status_inc = 1
 
-			statusPlusCommand=self.statusPlusCommandDict[statusKey]
-			net.SendChatPacket("%s %d" % (statusPlusCommand, status_inc))
+				statusPlusCommand=self.statusPlusCommandDict[statusKey]
+				net.SendChatPacket("%s %d" % (statusPlusCommand, status_inc))
+			else:
+				statusPlusCommand=self.statusPlusCommandDict[statusKey]
+				net.SendChatPacket(statusPlusCommand)
+
 		except KeyError, msg:
 			dbg.TraceError("CharacterWindow.__OnClickStatusPlusButton KeyError: %s", msg)
 
